@@ -1,0 +1,2 @@
+vendor/** linguist-vendored
+plugins/pstack/** linguist-generated

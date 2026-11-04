@@ -1,0 +1,22 @@
+{
+  "name": "pstack",
+  "version": "2026.1104.0",
+  "description": "pstack by Lauren Tan (poteto), packaged for Claude Code, Codex, and Hermes. Upstream 0.15.36 (bb68f23), synced weekly.",
+  "author": {
+    "name": "Jumpis",
+    "url": "https://github.com/Jumpis"
+  },
+  "homepage": "https://github.com/Jumpis/jum-pstack",
+  "repository": "https://github.com/Jumpis/jum-pstack",
+  "license": "MIT",
+  "keywords": [
+    "pstack",
+    "poteto-mode",
+    "workflow",
+    "principles",
+    "subagents",
+    "codex",
+    "hermes"
+  ],
+  "displayName": "pstack (jum-pstack)"
+}

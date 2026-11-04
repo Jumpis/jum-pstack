@@ -1,0 +1,11 @@
+#!/bin/sh
+# Commits in this repo credit only the repository owner: no co-author or session trailers, no Claude author.
+if grep -qiE '^(co-authored-by|claude-session):' "$1"; then
+  echo "commit-msg: Co-Authored-By / Claude-Session 줄은 넣지 않습니다. 메시지에서 지우고 다시 커밋하세요." >&2
+  exit 1
+fi
+case "$(git var GIT_AUTHOR_IDENT)" in
+  *anthropic.com*|Claude\ *)
+    echo "commit-msg: 작성자가 Claude입니다. git config user.name jhlee, user.email 24471244+Jumpis@users.noreply.github.com 으로 설정하세요." >&2
+    exit 1 ;;
+esac
