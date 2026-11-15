@@ -32,7 +32,7 @@ pstack skills use Cursor names. In Codex, read this file once per session, then 
 | Cursor | Codex |
 | --- | --- |
 | `claude-<family>-<version>-<effort>[-fast]`, such as `claude-opus-5-5-xhigh` | Claude models do not run in Codex. Use the role's line in the model sheet. Without one, pass no `model` so the agent runs on the session model, and say so. |
-| A `grok-*`, `gpt-*`, or other non-Claude slug | Pass it as `model` only when the session offers that model. Otherwise pass no `model` and say so. |
+| A `gemini-*` or other non-Claude slug | Pass it as `model` only when the session offers that model. Otherwise pass no `model` and say so. |
 | `auto` or `inherit-parent` | Pass no `model`. |
 | The `pstack-models.mdc` rule, `~/.cursor/rules/pstack-models.mdc` | `~/.codex/pstack-models.md` (`$CODEX_HOME/pstack-models.md`). The jum-pstack session-start hook prints it into each session when it exists. If the file or the role's line is missing, use the skill's default and say which model ran. |
 | A role value `<model> <effort>`, such as `opus high` | `model` and `reasoning_effort` on `spawn_agent`, when the session offers that model. A panel role wants distinct models; if only one is available, vary `reasoning_effort` and say that diversity was reduced. |

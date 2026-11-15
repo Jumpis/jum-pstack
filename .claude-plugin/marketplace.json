@@ -9,8 +9,8 @@
     {
       "name": "pstack",
       "source": "./plugins/pstack",
-      "description": "pstack 0.15.36 by Lauren Tan (poteto), jum-pstack build.",
-      "version": "2026.1104.0"
+      "description": "pstack 0.15.42 by Lauren Tan (poteto), jum-pstack build.",
+      "version": "2026.1116.0"
     }
   ]
 }
