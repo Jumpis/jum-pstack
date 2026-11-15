@@ -32,7 +32,7 @@ pstack skills use Cursor names. In Hermes, read this file once per session, then
 | Cursor | Hermes |
 | --- | --- |
 | `claude-<family>-<version>-<effort>[-fast]`, such as `claude-opus-5-5-xhigh` | `delegate_task` takes no model. With the default backend every child runs on `delegation.model`, or on your model when that is unset. With the `advanced-delegation` plugin's `model_map` backend, pick the option that matches the role. Otherwise say which model ran. |
-| A `grok-*`, `gpt-*`, or other non-Claude slug | The same as above: a `model_map` option when one matches, otherwise say which model ran. |
+| A `gemini-*` or other non-Claude slug | The same as above: a `model_map` option when one matches, otherwise say which model ran. |
 | `auto` or `inherit-parent` | The default backend. |
 | The `pstack-models.mdc` rule, `~/.cursor/rules/pstack-models.mdc` | `~/.hermes/pstack-models.md`. Read it at the start of a pstack run. If the file or the role's line is missing, use the skill's default and say which model ran. |
 | A role value `<model> <effort>`, such as `opus high` | The `model_map` option for that model. If the option cannot carry the effort, say so. A panel role wants distinct models; with one model, say that diversity was reduced. |

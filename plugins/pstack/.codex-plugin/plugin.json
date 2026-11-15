@@ -1,7 +1,7 @@
 {
   "name": "pstack",
-  "version": "2026.1104.0",
-  "description": "pstack by Lauren Tan (poteto), packaged for Claude Code, Codex, and Hermes. Upstream 0.15.36 (bb68f23), synced weekly.",
+  "version": "2026.1116.0",
+  "description": "pstack by Lauren Tan (poteto), packaged for Claude Code, Codex, and Hermes. Upstream 0.15.42 (bf0c7cd), synced weekly.",
   "author": {
     "name": "Jumpis",
     "url": "https://github.com/Jumpis"
