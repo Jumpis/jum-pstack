@@ -8,7 +8,7 @@ pstack skills use Cursor names. In Codex, read this file once per session, then 
 | --- | --- |
 | `Task` | `spawn_agent`, then `wait_agent` for its result, then `close_agent` when the session offers it. Run parallel work as several `spawn_agent` calls in one turn. Subagents need `multi_agent` on (`[features]` `multi_agent = true` in `~/.codex/config.toml`). Without it, do the work yourself in sequence and say so. A required independent review never degrades: it stays blocked. |
 | `AskQuestion` | Ask in plain text and wait for the answer. |
-| Open a todolist | `update_plan`. |
+| Open a todolist, or copy steps into the todolist tool | `update_plan`, with one plan item per step. |
 | Run another pstack skill (`/name` or "the **name** skill") | Read `<pstack>/skills/<name>/SKILL.md` and follow it. When you tell the user to type it, write `$pstack:<name>`. |
 | `Grep`, `Glob` | `rg` and `find` through the shell. |
 
@@ -18,6 +18,7 @@ pstack skills use Cursor names. In Codex, read this file once per session, then 
 | --- | --- |
 | `subagent_type: generalPurpose` | A plain `spawn_agent`. |
 | `poteto-agent`, `comment-sicko` | Codex has no custom agent types. Spawn a plain agent whose brief starts with "Read `<pstack>/agents/<name>.md` in full and follow it." |
+| The `model:` line in `poteto-agent`'s file | It holds a Cursor slug, and the agent only reads the file as text, so the line sets no model. Choose `model` and `reasoning_effort` on the `spawn_agent` call with the Models table, as for any other spawn. |
 | `readonly: true` | Put "do not edit files" in the brief, and check `git status` afterward. |
 | `readonly: false` | A plain `spawn_agent`. |
 | `environment: "cloud"` | Have the worker create its own worktree with `git worktree add` on the branch or commit you name. |

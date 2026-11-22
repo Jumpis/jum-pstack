@@ -8,7 +8,7 @@ pstack skills use Cursor names. In Hermes, read this file once per session, then
 | --- | --- |
 | `Task` | `delegate_task` with a `goal` and a full `context`. The child starts with a fresh conversation and sees nothing else. Run parallel work as one call with a `tasks` array (ten at a time by default). |
 | `AskQuestion` | `clarify`. |
-| Open a todolist | `todo`. |
+| Open a todolist, or copy steps into the todolist tool | `todo`, with one item per step. |
 | Run another pstack skill (`/name` or "the **name** skill") | `skill_view` the skill and follow it, or read `<pstack>/skills/<name>/SKILL.md`. When you tell the user to type it, write `/<name>`. |
 | `Grep`, `Glob` | `search_files`, or `rg` and `find` through `terminal`. |
 
@@ -18,6 +18,7 @@ pstack skills use Cursor names. In Hermes, read this file once per session, then
 | --- | --- |
 | `subagent_type: generalPurpose` | A plain `delegate_task`. |
 | `poteto-agent`, `comment-sicko` | Hermes has no custom agent types. Start the child's `context` with "Read `<pstack>/agents/<name>.md` in full and follow it." |
+| The `model:` line in `poteto-agent`'s file | It holds a Cursor slug, and the child only reads the file as text, so the line sets no model. Pick the model with the Models table, as for any other `delegate_task`, and say which model ran. |
 | `readonly: true` | Say "do not edit files" in the goal, and check `git status` afterward. Children inherit your toolsets, so this is a brief, not a sandbox. |
 | `readonly: false` | A plain `delegate_task`. |
 | `environment: "cloud"` | Name a git worktree in the `context` and have the child create it with `git worktree add` and work only there. |
